@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>彥鈞國中英語雲端教室 | 國二上 L3-1 影音題庫系統</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome 圖示 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+    body {
+      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- 頂部導航列 -->
+  <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center text-xl font-bold shadow">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold tracking-wide">彥鈞國中英語雲端教室</h1>
+          <p class="text-xs text-indigo-200">國二上 Unit 3 微型題庫精解平台</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-3">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-500 text-white shadow-sm">
+          <i class="fa-solid fa-circle-check mr-1.5"></i> 題庫影音已連線
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主內容區 -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+    <!-- 左側欄：題庫導覽與題目列表 (佔 4 欄) -->
+    <div class="lg:col-span-4 space-y-4">
+      
+      <!-- 單元卡片資訊 -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded">Unit 3-1</span>
+          <span class="text-xs text-slate-500"><i class="fa-regular fa-clock mr-1"></i> 共 7 大題</span>
+        </div>
+        <h2 class="text-base font-bold text-slate-800">國二上英文 L3-1 題目與影音精解</h2>
+        <p class="text-xs text-slate-500 mt-1">涵蓋：過去進行式 (was/were V-ing) 與時間連接詞 (when, before, after)</p>
+      </div>
+
+      <!-- 題號導覽選單 -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="bg-slate-50 px-4 py-3 border-b border-slate-200 flex items-center justify-between">
+          <h3 class="text-sm font-bold text-slate-700 flex items-center">
+            <i class="fa-solid fa-list-check mr-2 text-indigo-500"></i> 題目切換選單
+          </h3>
+          <span class="text-xs text-slate-400">點擊即刻跳轉</span>
+        </div>
+
+        <div class="divide-y divide-slate-100 max-h-[520px] overflow-y-auto">
+          
+          <!-- 大題 1：克漏字 -->
+          <div class="p-3 bg-indigo-50/40 text-xs font-bold text-indigo-900 flex items-center justify-between">
+            <span>一、克漏字選擇（篇章 1）</span>
+            <span class="bg-indigo-200/60 text-indigo-800 px-2 py-0.5 rounded text-[11px]">有教學影音</span>
+          </div>
+
+          <!-- 第 1 題 (Active) -->
+          <button onclick="switchQuestion(1)" id="qbtn-1" class="w-full text-left p-3.5 hover:bg-slate-50 transition flex items-start space-x-3 bg-indigo-50/60 border-l-4 border-indigo-600">
+            <span class="w-6 h-6 rounded-full bg-indigo-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold text-slate-800 truncate">第 1 題：時間連接詞 (When)</p>
+                <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">答案 B</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-0.5 truncate">__ 1. __ I was on my way home...</p>
+            </div>
+          </button>
+
+          <!-- 第 2 題 -->
+          <button onclick="switchQuestion(2)" id="qbtn-2" class="w-full text-left p-3.5 hover:bg-slate-50 transition flex items-start space-x-3">
+            <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-600 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold text-slate-700 truncate">第 2 題：過去動詞時態 (had)</p>
+                <span class="text-xs text-slate-400 font-medium">答案 D</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5 truncate">...and __ 2. __ problems breathing.</p>
+            </div>
+          </button>
+
+          <!-- 第 3 題 -->
+          <button onclick="switchQuestion(3)" id="qbtn-3" class="w-full text-left p-3.5 hover:bg-slate-50 transition flex items-start space-x-3">
+            <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-600 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold text-slate-700 truncate">第 3 題：CPR 與救護車抵達</p>
+                <span class="text-xs text-slate-400 font-medium">答案 B</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5 truncate">I also did CPR to her __ 3. __.</p>
+            </div>
+          </button>
+
+          <!-- 第 4 題 -->
+          <button onclick="switchQuestion(4)" id="qbtn-4" class="w-full text-left p-3.5 hover:bg-slate-50 transition flex items-start space-x-3">
+            <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-600 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">4</span>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold text-slate-700 truncate">第 4 題：恢復呼吸時間點</p>
+                <span class="text-xs text-slate-400 font-medium">答案 C</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5 truncate">__ 4. __ the ambulance came...</p>
+            </div>
+          </button>
+
+          <!-- 大題 2：閱讀測驗 (待轉影音) -->
+          <div class="p-3 bg-slate-50 text-xs font-bold text-slate-600 flex items-center justify-between">
+            <span>二、閱讀測驗（全 5 篇）</span>
+            <span class="bg-slate-200 text-slate-600 px-2 py-0.5 rounded text-[11px]">排隊產出中</span>
+          </div>
+          <div class="p-3 text-xs text-slate-400 text-center italic">
+            更多題目影音批次轉檔中...
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 右側欄：影音播放器 + 線上互動自測區 (佔 8 欄) -->
+    <div class="lg:col-span-8 space-y-6">
+
+      <!-- 影音播放器卡片 -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="bg-slate-900 text-white px-4 py-3 flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+            <span class="text-sm font-bold tracking-wide" id="video-title">正在播放：第 1 題 影音精解 (1080p Full HD)</span>
+          </div>
+          <div class="flex items-center space-x-2 text-xs text-slate-400">
+            <span><i class="fa-solid fa-volume-high text-emerald-400 mr-1"></i> AI 台灣專業配音</span>
+          </div>
+        </div>
+
+        <!-- 視訊元素 -->
+        <div class="relative bg-black aspect-video flex items-center justify-center">
+          <video id="player" controls class="w-full h-full" poster="poster.png">
+            <source src="q1_demo.mp4" type="video/mp4">
+            您的瀏覽器不支援 HTML5 影片播放。
+          </video>
+        </div>
+
+        <!-- 播放器下方控制輔助列 -->
+        <div class="px-4 py-2.5 bg-slate-50 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
+          <div class="flex items-center space-x-2">
+            <button onclick="seekTo(0)" class="px-2.5 py-1 bg-white border border-slate-200 rounded hover:bg-slate-100 transition shadow-sm font-medium">
+              <i class="fa-solid fa-rotate-left mr-1"></i> 從頭審題 (0:00)
+            </button>
+            <button onclick="seekTo(31)" class="px-2.5 py-1 bg-white border border-slate-200 rounded hover:bg-slate-100 transition shadow-sm font-medium text-amber-600">
+              <i class="fa-solid fa-stopwatch mr-1"></i> 作答思考 (0:31)
+            </button>
+            <button onclick="seekTo(34)" class="px-2.5 py-1 bg-white border border-slate-200 rounded hover:bg-slate-100 transition shadow-sm font-medium text-emerald-600">
+              <i class="fa-solid fa-lightbulb mr-1"></i> 直接看詳解 (0:34)
+            </button>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span>倍速：</span>
+            <button onclick="setSpeed(1.0)" class="px-2 py-0.5 rounded bg-slate-200 hover:bg-indigo-600 hover:text-white transition">1.0x</button>
+            <button onclick="setSpeed(1.25)" class="px-2 py-0.5 rounded bg-slate-200 hover:bg-indigo-600 hover:text-white transition">1.25x</button>
+            <button onclick="setSpeed(1.5)" class="px-2 py-0.5 rounded bg-slate-200 hover:bg-indigo-600 hover:text-white transition">1.5x</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 線上自測與重點筆記互動卡 -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 space-y-5">
+        
+        <div class="border-b border-slate-100 pb-4 flex items-center justify-between">
+          <h3 class="text-base font-bold text-slate-800 flex items-center">
+            <i class="fa-solid fa-pen-to-square text-indigo-600 mr-2"></i> 線上即時自測 (看影片前先試做看看！)
+          </h3>
+          <span class="text-xs text-indigo-600 bg-indigo-50 px-2 py-1 rounded font-semibold">單選題</span>
+        </div>
+
+        <!-- 題目與選項 -->
+        <div class="space-y-3">
+          <p class="text-sm font-medium text-slate-800">
+            <span class="font-bold text-indigo-700">（　）1.</span> 請選出最適合空格 <code class="bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded">__ 1. __</code> 的連接詞：
+          </p>
+          <p class="text-xs text-slate-500 pl-6 italic">
+            原句：James: "＿＿1.＿＿ I was on my way home, I saw her in front of a fruit store."
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+            <button onclick="checkAnswer('A')" id="opt-A" class="opt-btn text-left px-4 py-3 rounded-lg border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/30 transition text-sm flex items-center justify-between">
+              <span><strong>(A)</strong> But</span>
+              <span id="mark-A" class="hidden text-xs font-bold"></span>
+            </button>
+            <button onclick="checkAnswer('B')" id="opt-B" class="opt-btn text-left px-4 py-3 rounded-lg border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/30 transition text-sm flex items-center justify-between">
+              <span><strong>(B)</strong> When</span>
+              <span id="mark-B" class="hidden text-xs font-bold"></span>
+            </button>
+            <button onclick="checkAnswer('C')" id="opt-C" class="opt-btn text-left px-4 py-3 rounded-lg border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/30 transition text-sm flex items-center justify-between">
+              <span><strong>(C)</strong> Or</span>
+              <span id="mark-C" class="hidden text-xs font-bold"></span>
+            </button>
+            <button onclick="checkAnswer('D')" id="opt-D" class="opt-btn text-left px-4 py-3 rounded-lg border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/30 transition text-sm flex items-center justify-between">
+              <span><strong>(D)</strong> After</span>
+              <span id="mark-D" class="hidden text-xs font-bold"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 答題反饋卡 (點選後展示) -->
+        <div id="feedback-card" class="hidden rounded-lg p-4 transition-all"></div>
+
+        <!-- 摺疊文字詳解 -->
+        <div class="pt-2">
+          <details class="group bg-slate-50 border border-slate-200 rounded-lg overflow-hidden">
+            <summary class="px-4 py-3 text-xs font-bold text-slate-700 cursor-pointer flex items-center justify-between select-none">
+              <span><i class="fa-solid fa-book-open mr-1.5 text-indigo-500"></i> 查看文字版考卷詳解與生字庫</span>
+              <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform text-slate-400"></i>
+            </summary>
+            <div class="px-4 py-3 border-t border-slate-200 text-xs text-slate-600 space-y-2 bg-white">
+              <p><strong>《答案》</strong> (B)</p>
+              <p><strong>《考卷原文詳解》</strong>「當」James 在回家途中，看到一位老婦人在水果店前。</p>
+              <div class="bg-amber-50 border border-amber-200 rounded p-2 text-amber-900 mt-2">
+                <strong>文法點撥：</strong> When 連接兩個過去時間點重疊或先後銜接的動作；句型為 <code>When + 子句1, 子句2</code>。
+              </div>
+            </div>
+          </details>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- 頁尾 -->
+  <footer class="bg-white border-t border-slate-200 py-4 mt-8 text-center text-xs text-slate-400">
+    <p>彥鈞國中自動化教材系統 · 影音微型題庫 · 支援電腦、iPad、手機全平台瀏覽</p>
+  </footer>
+
+  <script>
+    const player = document.getElementById('player');
+
+    function seekTo(sec) {
+      player.currentTime = sec;
+      player.play();
+    }
+
+    function setSpeed(speed) {
+      player.playbackRate = speed;
+    }
+
+    function checkAnswer(chosen) {
+      const correct = 'B';
+      const feedback = document.getElementById('feedback-card');
+      
+      // 重設所有選項按鈕樣式
+      ['A', 'B', 'C', 'D'].forEach(letter => {
+        const btn = document.getElementById(`opt-${letter}`);
+        const mark = document.getElementById(`mark-${letter}`);
+        btn.className = "opt-btn text-left px-4 py-3 rounded-lg border border-slate-200 hover:border-indigo-400 transition text-sm flex items-center justify-between";
+        mark.className = "hidden text-xs font-bold";
+      });
+
+      const chosenBtn = document.getElementById(`opt-${chosen}`);
+      const chosenMark = document.getElementById(`mark-${chosen}`);
+      const correctBtn = document.getElementById(`opt-${correct}`);
+      const correctMark = document.getElementById(`mark-${correct}`);
+
+      if (chosen === correct) {
+        chosenBtn.className = "opt-btn text-left px-4 py-3 rounded-lg border-2 border-emerald-500 bg-emerald-50 text-emerald-900 transition text-sm flex items-center justify-between font-bold";
+        chosenMark.textContent = "✓ 答對了！";
+        chosenMark.className = "text-xs font-bold text-emerald-600";
+        
+        feedback.className = "rounded-lg p-4 bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs space-y-1 block";
+        feedback.innerHTML = `
+          <div class="font-bold flex items-center text-sm text-emerald-700">
+            <i class="fa-solid fa-circle-check mr-2"></i> 太棒了，完全正確！
+          </div>
+          <p class="pt-1">正確答案為 <strong>(B) When</strong>。表示「當……的時候」，連接 James 回家與看見老婦人這兩個過去動作。</p>
+          <div class="pt-2">
+            <button onclick="seekTo(34)" class="inline-flex items-center px-3 py-1 bg-emerald-600 text-white rounded hover:bg-emerald-700 font-semibold transition">
+              <i class="fa-solid fa-play mr-1.5"></i> 點此直接聆聽影片詳解 (0:34)
+            </button>
+          </div>
+        `;
+      } else {
+        chosenBtn.className = "opt-btn text-left px-4 py-3 rounded-lg border-2 border-red-500 bg-red-50 text-red-900 transition text-sm flex items-center justify-between";
+        chosenMark.textContent = "✗ 再想想";
+        chosenMark.className = "text-xs font-bold text-red-600";
+
+        correctBtn.className = "opt-btn text-left px-4 py-3 rounded-lg border-2 border-emerald-500 bg-emerald-50 text-emerald-900 transition text-sm flex items-center justify-between";
+        correctMark.textContent = "★ 正確解答";
+        correctMark.className = "text-xs font-bold text-emerald-600";
+
+        feedback.className = "rounded-lg p-4 bg-red-50 border border-red-200 text-red-900 text-xs space-y-1 block";
+        feedback.innerHTML = `
+          <div class="font-bold flex items-center text-sm text-red-700">
+            <i class="fa-solid fa-circle-xmark mr-2"></i> 答錯囉！
+          </div>
+          <p class="pt-1">您選的 (${chosen}) 在此句中意思不合。正確答案是 <strong>(B) When</strong>。</p>
+          <div class="pt-2">
+            <button onclick="seekTo(34)" class="inline-flex items-center px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 font-semibold transition">
+              <i class="fa-solid fa-video mr-1.5"></i> 點我看影片老師為您解說 (0:34)
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    function switchQuestion(qnum) {
+      if (qnum === 1) {
+        player.src = "q1_demo.mp4";
+        player.play();
+        document.getElementById('video-title').textContent = "正在播放：第 1 題 影音精解 (1080p Full HD)";
+      } else {
+        alert(`第 ${qnum} 題教學影音正在後台自動批次生成中，敬請期待！`);
+      }
+    }
+  </script>
+</body>
+</html>
